@@ -7,35 +7,35 @@ JasPer项目是一个开源项目，它提供了一种基于jpeg-2000部分标�
 
 异常触发
 
-![image](C:\Users\iie.000\Desktop\图片\图1.png)
+![image](C:\\Users\\iie.000\\Desktop\\picture\\1.png)
 
 初步分析是由于函数jpc_dec.c函数中jpc_dequantize造成的core dumped
 
 main() 到出错之间的调用关系1：
 
-![image](C:\Users\iie.000\Desktop\图片\图2.png)
+![image](C:\\Users\\iie.000\\Desktop\\picture\\2.png)
 
 寄存器的信息1：
 
-![image](C:\Users\iie.000\Desktop\图片\图3.jpg)
+![image](C:\\Users\\iie.000\\Desktop\\picture\\3.jpg)
 
 main() 到出错之间的调用关系2：
 
-![image](C:\Users\iie.000\Desktop\图片\图4.jpg)
+![image](C:\\Users\\iie.000\\Desktop\\picture\\4.jpg)
 
 寄存器的信息2：
 
-![image](C:\Users\iie.000\Desktop\图片\图5.jpg)
+![image](C:\\Users\\iie.000\\Desktop\\picture\\5.jpg)
 
 寄存器的信息3：
 
-![image](C:\Users\iie.000\Desktop\图片\图6.jpg)
+![image](C:\\Users\\iie.000\\Desktop\\picture\\6.jpg)
 
 crash:
 
-![image](C:\Users\iie.000\Desktop\图片\图7.jpg)
+![image](C:\\Users\\iie.000\\Desktop\\picture\\7.jpg)
 
-![image](C:\Users\iie.000\Desktop\图片\图8.png)
+![image](C:\\Users\\iie.000\\Desktop\\picture\\8.png)
 
 jp2_boxinfo_t *jp2_boxinfolookup(int type)遍历格式：格式
 
