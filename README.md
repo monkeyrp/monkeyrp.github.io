@@ -1,25 +1,43 @@
 ## JasPer简介
 
-JasPer项目是一个开源项目，它提供了一种基于jpeg-2000部分标准。这个项目最初是由Image Power和英属哥伦比亚大学合作完成的。目前，正在进行的JapsPer软件的维护和开发的主要作者Michael Adams进行协调，他是维多利亚大学电子和计算机工程部门的数字信号处理组(DSPG)的成员。影响的版本是2.0.12.    
+```JasPer项目是一个开源项目，它提供了一种基于jpeg-2000部分标准。这个项目最初是由Image Power和英属哥伦比亚大学合作完成的。目前，正在进行的JapsPer软
+件的维护和开发的主要作者Michael Adams进行协调，他是维多利亚大学电子和计算机工程部门的数字信号处理组(DSPG)的成员。影响的版本是2.0.12.    
+```
 
-### 分析
+## 分析
 
 异常触发
-[image](C:\Users\iie.000\Desktop\图片\图1.png)
+
+![image](C:\Users\iie.000\Desktop\图片\图1.png)
+
 初步分析是由于函数jpc_dec.c函数中jpc_dequantize造成的core dumped
+
 main() 到出错之间的调用关系1：
-[image](C:\Users\iie.000\Desktop\图片\图2.png)
+
+![image](C:\Users\iie.000\Desktop\图片\图2.png)
+
 寄存器的信息1：
-[image](C:\Users\iie.000\Desktop\图片\图3.jpg)
+
+![image](C:\Users\iie.000\Desktop\图片\图3.jpg)
+
 main() 到出错之间的调用关系2：
-[image](C:\Users\iie.000\Desktop\图片\图4.jpg)
+
+![image](C:\Users\iie.000\Desktop\图片\图4.jpg)
+
 寄存器的信息2：
-[image](C:\Users\iie.000\Desktop\图片\图5.jpg)
+
+![image](C:\Users\iie.000\Desktop\图片\图5.jpg)
+
 寄存器的信息3：
-[image](C:\Users\iie.000\Desktop\图片\图6.jpg)
+
+![image](C:\Users\iie.000\Desktop\图片\图6.jpg)
+
 crash:
-[image](C:\Users\iie.000\Desktop\图片\图7.jpg)
-[image](C:\Users\iie.000\Desktop\图片\图8.png)
+
+![image](C:\Users\iie.000\Desktop\图片\图7.jpg)
+
+![image](C:\Users\iie.000\Desktop\图片\图8.png)
+
 jp2_boxinfo_t *jp2_boxinfolookup(int type)遍历格式：格式
 
 jasper的输入Jasper ./crash_in2/id_000062,sig_11,src_000901,op_ext_AO,pos_66-t jp2 
